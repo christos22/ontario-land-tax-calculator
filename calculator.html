@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Land Transfer Calculator</title>
+    <link rel="stylesheet" href="calculator.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="calc_container">
+        <div id="calculator">
+            <table id="locandfir" border="0">
+                <tr>
+                    <td colspan="3" class="tdTxt">
+                        <h4>Your Property Location?</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="municipTax" class="calcTxt taxbtn propertyLocationTD" type="button"
+                            value="Toronto" />
+                    </td>
+                    <td><input id="ontarioTax" class="calcTxt taxbtn propertyLocationTD" type="button"
+                            value="Rest of ON" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="firstTimeLabel" class="tdTxt">
+                        <h4>Are you a first-time Home-buyer?</h4>
+                    </td>
+                </tr>
+                <tr id="firstTimeTD">
+                    <td><input id="firstTime" class="calcTxt taxbtn firstTimeTD" type="button" value="Yes" /></td>
+                    <td><input id="noFirstTime" class="calcTxt taxbtn firstTimeTD" type="button" value="No" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="tdTxt">
+                        <h4>Are you buying a home with someone?</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="yesShareBuy" class="calcTxt taxbtn shareBuyTD" type="button" value="Yes" /></td>
+                    <td><input id="noShareBuy" class="calcTxt taxbtn shareBuyTD" type="button" value="No" /></td>
+                </tr>
+                <tr>
+                    <table id="firstTimeShareTbl" class="hideElem">
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="tdTxt">
+                                    <h4 style="margin-top: 22px;">What share will belong to the co-buyer?</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="slidecontainer">
+                                        <label style="text-align:left;">Drag</label>
+                                        <input type="range" min="0" max="100" value="0" class="shareSlider"
+                                            id="shareSlider" title="Drag">
+                                    </div>
+                                    <p id="shareValue" title="Drag the range slider"><span
+                                            id="shareValueInt"></span><span>%</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="tdTxt">
+                                    <h4>Is the co-Buyer a first-time buyer?</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input id="yesCobFirst" class="calcTxt taxbtn shareBuyTD" type="button" value="Yes" /></td>
+                                <td><input id="noCobFirst" class="calcTxt taxbtn shareBuyTD" type="button" value="No" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </tr>
+                <tr>
+                    <td colspan="3" class="tdTxt">
+                        <h4 style="margin-top: 22px;">Do the following apply to you?</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <table id="nrst">
+                        <tr>
+                            <td colspan="3"><input type="checkbox" id="nonresident" class="nrst" name="nonresident">
+                                <label for="nonresident">Not a Canadian citizen or have not resided in Canada for more
+                                    than 183 days during the past 365 days</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="checkbox" id="residProp" class="nrst" name="residProp">
+                                <label for="residProp">You are purchasing residential property (more than 1 unit and
+                                    less than 4)</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="checkbox" id="ggha" class="nrst" name="ggha">
+                                <label for="ggha">The property is located in the <span class="ggha_span">Golden Greater
+                                        Horseshoe Area
+                                        <div class="ggha_tooltip">
+                                            <ul>
+                                                <li>Barrie</li>
+                                                <li>County of Brant Brantford</li>
+                                                <li>County of Dufferin</li>
+                                                <li>Regional Municipality of Durham</li>
+                                                <li>Guelph</li>
+                                                <li>Haldimand County</li>
+                                                <li>Regional Municipality of Halton</li>
+                                                <li>Hamilton</li>
+                                                <li>Kawartha Lakes</li>
+                                                <li>Regional Municipality of Niagara</li>
+                                                <li>County of Northumberland</li>
+                                                <li>Orillia</li>
+                                                <li>Regional Municipality of Peel</li>
+                                                <li>Peterborough</li>
+                                                <li>County of Peterborough</li>
+                                                <li>County of Simcoe</li>
+                                                <li>Toronto</li>
+                                                <li>Regional Municipality of Waterloo</li>
+                                                <li>County of Wellington</li>
+                                                <li>Regional Municipality of York</li>
+                                            </ul>
+                                        </div>
+                                    </span></label>
+                            </td>
+                        </tr>
+
+                    </table>
+                </tr>
+            </table>
+            <table id="price" border="0">
+                <tr>
+                    <td colspan="3" class="tdTxt">
+                        <h4>Asking Price:</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input type="text" id="resultFront" class="result"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="visibility:hidden;height:10px;"><input type="text" id="calcScreen" class="result"></td>
+                </tr>
+                <tr>
+                    <td class="calculate" colspan="3"><input id="calculate" class="taxbtn" type="submit" value="CALCULATE" /></td>
+                </tr>
+                <tr id="calcError" class="result"></tr>
+            </table>
+        </div>
+        <div id="tlresult">
+            <h2>The following Land Transfer Tax is applicable</h2>
+            <p>Provincial Tax: <span id="ontarioTaxResult" class="result"></span></p>
+            <p>Municipal Tax: <span id="municipTaxResult" class="result"></span></p>
+            <p>Provincial Rebate: <span id="prov_rebate" class="result"></span></p>
+            <p>Municipal Rebate: <span id="mun_rebate" class="result"></span></p>
+            <p>Non-resident Speculation Tax: <span id="nrstResult" class="result"></span></p>
+            <hr>
+            <p>Land Transfer Tax: <span id="totalTax" class="result"></span></p>
+
+            <input id="reset" class="taxbtn" type="submit" value="RESET" />
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>

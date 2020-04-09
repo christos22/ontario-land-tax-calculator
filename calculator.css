@@ -1,0 +1,305 @@
+/* Calculator */
+
+#calc_container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-evenly;
+	overflow: hidden;
+}
+
+#calculator table {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#calculator table tr {
+	background: transparent;
+}
+
+#calculator h4 {
+	text-align: center;
+}
+
+#calc_container input[type="button"] {
+	background-color: inherit;
+	color: black;
+	border: 1px solid #999;
+	width: 95%;
+	height: 80%;
+	cursor: pointer;
+	transition: all 200ms ease-in;
+	font-size: inherit;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+}
+
+#calc_container input[type="button"]:hover,
+#calc_container input[type="button"].buttonChecked {
+	background-color: #FDCB30;
+}
+
+#calc_container input[type="button"],
+#calc_container input[type="submit"],
+#calc_container input[type="checkbox"] {
+	cursor: pointer;
+}
+
+#calc_container input[type="button"]:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+#firstTimeLabel.inactive h4 {
+	opacity: 0.5;
+}
+
+#calc_container input[type="button"]:disabled:hover {
+	background-color: initial;
+}
+
+#calc_container input[type="text"] {
+	border: none;
+	height: 80%;
+	padding: 0 15px;
+	border-bottom: solid #777 1px;
+	background: none;
+	color: inherit;
+	font-size: 1.5em;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
+
+#reset {
+	width: 125px;
+	margin: 30px 0;
+	height: 56px;
+}
+
+#calculator #price td {
+	height: 70px;
+}
+
+.calculate>input[type="submit"] {
+	width: 100%;
+	height: 80%;
+}
+
+td {
+	width: 200px;
+	height: 70px;
+	text-align: center;
+}
+
+.tdTxt {
+	vertical-align: bottom;
+}
+
+.tdTxt p {
+	margin-bottom: 0;
+}
+
+#calcError {
+	height: 70px;
+	position: relative;
+}
+
+#calcError>td {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#error>td {
+	width: 100%;
+}
+
+#calculator #nrst {
+	margin: 0 auto 50px;
+}
+
+#calculator #nrst td {
+	width: 100%;
+	text-align: left;
+	height:auto;
+}
+
+#calcError {
+	color: red;
+}
+
+#tlresult {
+	margin-top: 50px;
+}
+
+#tlresult span {
+	font-weight: bold;
+	float: right;
+}
+
+#shareBuyHide {
+	display: block;
+	opacity: 1;
+	height: auto;
+}
+
+.hideElem {
+	display: none;
+}
+
+#shareBuyHide.hideElem {
+	display: block;
+	opacity: 0;
+	height: 0;
+}
+
+.elemTrans {
+	transition: all 300ms linear;
+	-webkit-transition: all 300ms linear;
+	-moz-transition: all 300ms linear;
+	-ms-transition: all 300ms linear;
+	-o-transition: all 300ms linear;
+}
+
+.slidecontainer {
+	width: 100%;
+	text-align: left;
+}
+
+.shareSlider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 25px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.shareSlider:hover {
+	opacity: 1;
+}
+
+.shareSlider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #4CAF50;
+	cursor: pointer;
+}
+
+.shareSlider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #FDCB30;
+	cursor: pointer;
+}
+
+#shareValue {
+	text-align: center;
+	font-size: 2em;
+	color: #FDCB30;
+}
+
+/* Golden Greater Horseshoe Area - Tooltip */
+
+.ggha_span {
+	cursor: help;
+	position: relative;
+	width: 200px;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.ggha_span .ggha_tooltip ul li {
+	margin: 0;
+}
+
+.ggha_span .ggha_tooltip {
+	border: 6px solid #cccccc;
+	background: rgb(243, 239, 239);
+	bottom: 100%;
+	display: block;
+	left: -50%;
+	margin-bottom: 15px;
+	opacity: 0;
+	padding: 20px;
+	pointer-events: none;
+	position: absolute;
+	width: 170%;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	-ms-transform: translateY(10px);
+	-o-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-transition: all .25s ease-out;
+	-moz-transition: all .25s ease-out;
+	-ms-transition: all .25s ease-out;
+	-o-transition: all .25s ease-out;
+	transition: all .25s ease-out;
+	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the ggha_tooltip without it disappearing */
+.ggha_span .ggha_tooltip:before {
+	bottom: -20px;
+	content: " ";
+	display: block;
+	height: 20px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+/* CSS Triangles */
+.ggha_tooltip:after {
+	border-left: solid transparent 20px;
+	border-right: solid transparent 20px;
+	border-top: solid #ccc 20px;
+	bottom: -20px;
+	content: " ";
+	height: 0;
+	left: 50%;
+	margin-left: -13px;
+	position: absolute;
+	width: 0;
+}
+
+.ggha_span:hover .ggha_tooltip {
+	opacity: 1;
+	pointer-events: auto;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	-o-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .ggha_span .ggha_tooltip {
+	display: none;
+}
+
+.lte8 .ggha_span:hover .ggha_tooltip {
+	display: block;
+}
